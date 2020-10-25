@@ -19,31 +19,14 @@ public class KafkaController {
 
     @GetMapping("/send/{id}")
     public void doSendKafkaTopic(@PathVariable("id") String id) {
-        if(id.equals("1")) {
             kafkaTemplate.send("reflectoring-1",
-                    0,
-                    "SOME_KEY",
+//                    Integer.valueOf(id),
+                    id,
                     EventData.builder()
                             .eventName("Event1")
-                            .data("Hi Rem! <3")
+                            .data("Hi Rem! <3 [{"+id+"}]")
                             .version(1)
                             .build()
             );
-        } else if (id.equals("2")){
-            kafkaTemplate.send("reflectoring-1",
-                    1,
-                    "SOME_KEY",
-                    EventData.builder()
-                            .eventName("Event1")
-                            .data("Hi Rem! <3")
-                            .version(1
-                            )
-                            .subDataVO(SubDataVO.builder()
-                                    .id("ID")
-                                    .value("Rem is better than Emilia")
-                                    .build())
-                            .build()
-            );
-        }
     }
 }
