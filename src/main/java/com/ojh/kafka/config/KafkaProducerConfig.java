@@ -20,8 +20,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-@EnableKafka
-@Configuration
 class KafkaProducerConfig {
 
     @Value("${spring.kafka.bootstrap-servers}")
