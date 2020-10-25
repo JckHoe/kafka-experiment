@@ -3,6 +3,7 @@ package com.ojh.kafka.controller;
 import com.ojh.kafka.model.EventData;
 import com.ojh.kafka.model.vo.SubDataVO;
 import lombok.RequiredArgsConstructor;
+import org.apache.kafka.clients.producer.internals.DefaultPartitioner;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
